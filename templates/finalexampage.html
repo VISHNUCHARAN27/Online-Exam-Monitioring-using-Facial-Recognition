@@ -1,0 +1,38 @@
+{%extends 'index.html' %}
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+{% load crispy_forms_tags %}
+{%block content%}
+    <div class="form-group">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4" align="center">Allow Camera Access</legend>
+            <p>
+                This portal needs permission for accessing the camera during the exam for avoiding malpractice.
+                Please click Access Camera to start the test. You will not be evaluated if you do not click
+                this access camera. So please make sure your camera is working and it is on while doing the exam.
+            </p>
+        </fieldset>
+
+        <form action="finalpage/" method="POST">
+            {%csrf_token%}
+            <p>
+                   Click here
+            </p>
+            <input align="center" type="submit" value="Access Camera" >
+        </form>
+    </div>
+    <div>
+        <p> Question 1 </p> <br>
+        <p> Question 2 </p> <br>
+        <p> Question 3 </p> <br>
+        <p> Question 4 </p> <br>
+        <p> Question 5 </p> <br>
+    </div>
+    <div class="form-group">
+        <form action="examfinish/" method="POST">
+            {%csrf_token%}
+            <p> Please click end the test to end the exam</p>
+            <br>
+            <input type="submit" value="End test" >
+        </form>
+    </div>
+{%endblock%}

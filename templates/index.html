@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Login</title>
+</head>
+<body>
+    {%block content%}
+        <h1> Welcome to Student Exam Portal </h1>
+        {% if user.is_authenticated %}
+            <p> You have already been logged in. Please logout first </p>
+            <a href="{%url 'logout' %}">Logout </a>
+
+            {% else %}
+                <p> Please Login to the portal  </p>
+                <a href="{%url 'login_url' %}">Login </a>
+
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
+
+
+
+
+
+
+
+

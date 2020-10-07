@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<button class="btn btn-outline-info" type="submit" onclick="location.href='{% url 'script'%}'">Login</button>
+
+"""
+{% if data %}
+    {{data}}
+{% endif %}
+"""
+-->
+

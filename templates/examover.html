@@ -1,0 +1,19 @@
+{%extends 'index.html' %}
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+{% load crispy_forms_tags %}
+{%block content%}
+    <div class="form-group">
+        <form action="finalpage/" method="POST">
+            {%csrf_token%}
+            <p>
+                You have completed your exam successfully !!.
+            </p>
+            <br>
+        </form>
+        <p>
+            Please logout
+        </p>
+        <a href="{%url 'logout' %}">Logout </a>
+    </div>
+
+{%endblock%}

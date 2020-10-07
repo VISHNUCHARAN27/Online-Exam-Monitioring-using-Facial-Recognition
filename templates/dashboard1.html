@@ -1,0 +1,24 @@
+{%extends 'index.html' %}
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+{% load crispy_forms_tags %}
+{%block content%}
+    {% if user.is_authenticated %}
+        <p>
+            You have been logged in.
+        </p>
+    {% endif %}
+    <div class="form-group">
+        <p> Please click the button here to verify your face </p>
+        <br>
+        <form action="external/" method="POST">
+            {%csrf_token%}
+            <p> Please enter your username before detecting the face </p>
+            <input type="text" name="uname">
+            <br>
+            <input type="submit" value="Detect Face" >
+
+        </form>
+    </div>
+
+{%endblock%}
+

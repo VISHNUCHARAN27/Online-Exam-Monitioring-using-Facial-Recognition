@@ -1,0 +1,37 @@
+{%extends 'index.html' %}
+{% load crispy_forms_tags %}
+{%block content%}
+    <h1 align="center"> Welcome to the exam {{ user.username }}  </h1>
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4" align="center">Important instructions</legend>
+        <p>
+          1) The examination is proctored. Trying to cheat in the examination will result in logging out. <br>
+          2) This examination will access your camera and microphone.<br>
+        </p>
+        </fieldset>
+    <form method="POST">
+        {%csrf_token%}
+        {{ form|crispy}}
+
+        <a href="{%url 'examportal' %}"> Go to exam page </a>
+    </form>
+{%endblock%}
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<a href="%url 'logout' %"> Start the exam </a>
+-->
+
